@@ -9,6 +9,7 @@ buildscript {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
         classpath 'com.wynprice.cursemaven:CurseMaven:1.2.+'
         classpath group: 'gradle.plugin.com.matthewprenger', name: 'CurseGradle', version: '1.+'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
     }
 }
 
@@ -103,10 +104,16 @@ repositories {
         }
     }
 }
+
+configurations {
+    provided
+    compile.extendsFrom provided
+}
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.2.0'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    shadow group: 'com.github.twitch4j', name: 'twitch4j', version: '1.2.0'
+    shadow group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
@@ -123,30 +130,22 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
-
 }
 
 shadowJar {
-    include 'com.github.twitch4j'
-    manifest {
-        attributes([
-                "Specification-Title"     : project.mod_id,
-                "Specification-Vendor"    : project.mod_author,
-                "Specification-Version"   : "1",
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : "${version}",
-                "Implementation-Vendor"   : project.mod_author,
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
-    }
+    configurations = [project.configurations.shadow]
 }
-//shadowJar.finalizedBy('reobfJar')
+
+
+tasks.jar.dependsOn(shadowJar)
+
+//jars.finalizedBy('reobfJar')
 shadowJar.finalizedBy('reobfJar')
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            artifact shadowJar
         }
     }
     repositories {
@@ -159,8 +158,10 @@ publishing {
 if (ENV.CURSEFORGE_KEY) {
     println('Found Curseforge key')
     curseforge {
+
         apiKey = ENV.CURSEFORGE_KEY
         project {
+            mainArtifact shadowJar
             id = project.curseforge_id_forge
             releaseType = "release"
             addGameVersion "Forge"
