@@ -5,6 +5,7 @@ import com.github.twitch4j.TwitchClient;
 import com.github.twitch4j.TwitchClientBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Collections;
@@ -62,7 +63,7 @@ public class TwitchConfigHandler {
                     .comment("Enable/Disable Twitch Helix API")
                     .define("twitchHelix",false);
             twitchKraken  = builder
-                    .comment("Enable/Disable Twitch Kraken API")
+                    .comment("Enable/Disable Twitch Kraken API. (Deprecated)")
                     .define("twitchKraken",false);
             twitchPubSub  = builder
                     .comment("Enable/Disable Twitch PubSub API")
@@ -138,5 +139,6 @@ public class TwitchConfigHandler {
         builder = builder.withDefaultAuthToken(CREDENTIALS);
 
         CLIENT = builder.build();
+        MinecraftForge.EVENT_BUS.post(new TwitchClientInitEvent(CLIENT));
     }
 }
