@@ -7,6 +7,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.List;
 import static pie.ilikepiefoo2.twitchintegration.TwitchIntegration.CREDENTIALS;
 
 public class TwitchConfigHandler {
-
+    private static final Logger LOGGER = LogManager.getLogger(TwitchConfigHandler.class);
     public static class Common {
         public final ForgeConfigSpec.ConfigValue<String> oAuthToken;
         public final ForgeConfigSpec.ConfigValue<String> chatAccountOAuthToken;
@@ -104,41 +106,79 @@ public class TwitchConfigHandler {
 
     private static void buildClient()
     {
+        LOGGER.info("Building Twitch Client...");
+
+        LOGGER.info("Overriding Existing OauthToken...");
         CREDENTIALS.setAccessToken(COMMON.oAuthToken.get());
-        if(CLIENT != null)
+        if(CLIENT != null) {
+            LOGGER.info("Closing Existing Client...");
             CLIENT.close();
+        }
+        LOGGER.info("Building new client...");
         TwitchClientBuilder builder = TwitchClientBuilder.builder();
-        if(COMMON.twitchChat.get())
+        if(COMMON.twitchChat.get()) {
+            LOGGER.info("Building with TwitchChat Enabled...");
             builder = builder.withEnableChat(true);
-        if(COMMON.twitchHelix.get())
+        }
+        if(COMMON.twitchHelix.get()) {
+            LOGGER.info("Building with TwitchHelix Enabled...");
             builder = builder.withEnableHelix(true);
-        if(COMMON.twitchKraken.get())
+        }
+        if(COMMON.twitchKraken.get()) {
+            LOGGER.info("Building with TwitchKraken Enabled...");
             builder = builder.withEnableKraken(true);
-        if(COMMON.twitchPubSub.get())
+        }
+        if(COMMON.twitchPubSub.get()) {
+            LOGGER.info("Building with TwitchPubSub Enabled...");
             builder = builder.withEnablePubSub(true);
-        if(COMMON.graphQL.get())
+        }
+        if(COMMON.graphQL.get()) {
+            LOGGER.info("Building with graphQL Enabled...");
             builder = builder.withEnableGraphQL(true);
-        if(COMMON.extensions.get())
+        }
+        if(COMMON.extensions.get()) {
+            LOGGER.info("Building with Extensions Enabled...");
             builder = builder.withEnableExtensions(true);
-        if(COMMON.tmi.get())
+        }
+        if(COMMON.tmi.get()) {
+            LOGGER.info("Building with TMI Enabled...");
             builder = builder.withEnableTMI(true);
-        if(COMMON.clientId.get().length() > 0)
+        }
+        if(COMMON.clientId.get().length() > 0) {
+            LOGGER.info("Building Using Client Id...");
             builder = builder.withClientId(COMMON.clientId.get());
-        if(COMMON.clientSecret.get().length() > 0)
+        }
+        if(COMMON.clientSecret.get().length() > 0) {
+            LOGGER.info("Building Using Client Secret...");
             builder = builder.withClientId(COMMON.clientSecret.get());
+        }
         if(COMMON.chatAccountOAuthToken.get().length() > 0) {
+            LOGGER.info("Building Using Chat Account using Chat OAuth token");
             builder = builder.withChatAccount(new OAuth2Credential("twitch", COMMON.chatAccountOAuthToken.get()));
         }else{
+            LOGGER.info("Building Using Chat Account using Existing OAuth token");
             builder = builder.withChatAccount(CREDENTIALS);
         }
-        if(COMMON.botOwnerIds.get().size() > 0)
-            for(String ownerId : COMMON.botOwnerIds.get())
+        if(COMMON.botOwnerIds.get().size() > 0) {
+            LOGGER.info("Building using {} existing bot owner ids...",COMMON.botOwnerIds.get().size());
+            for (String ownerId : COMMON.botOwnerIds.get())
                 builder = builder.withBotOwnerId(ownerId);
-        if(COMMON.chatServer.get().length() > 0)
+        }
+        if(COMMON.chatServer.get().length() > 0) {
+            LOGGER.info("Building using Chat Server...");
             builder = builder.withChatServer(COMMON.chatServer.get());
+        }
+        LOGGER.info("Building with default OAuthToken...");
         builder = builder.withDefaultAuthToken(CREDENTIALS);
 
-        CLIENT = builder.build();
-        MinecraftForge.EVENT_BUS.post(new TwitchClientInitEvent(CLIENT));
+        LOGGER.info("Building Client...");
+        try {
+            CLIENT = builder.build();
+            LOGGER.debug("Posting new Twitch Client Init Event...");
+            MinecraftForge.EVENT_BUS.post(new TwitchClientInitEvent(CLIENT));
+            LOGGER.debug("Posting new Twitch Client Init Event Posted...");
+        }catch(Exception e){
+            LOGGER.error("Twitch Client Failed to build...",e);
+        }
     }
 }
