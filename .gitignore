@@ -5,3 +5,4 @@ build/
 run/
 .gradle/
 logs/
+src/main/java/pie/ilikepiefoo2/events/*

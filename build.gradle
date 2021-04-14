@@ -111,9 +111,10 @@ configurations {
 }
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    compile group: 'com.github.twitch4j', name: 'twitch4j', version: '1.2.0'
     shadow group: 'com.github.twitch4j', name: 'twitch4j', version: '1.2.0'
     shadow group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
-
+    compile "org.reflections:reflections:0.9.11"
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
@@ -134,6 +135,7 @@ jar {
 
 shadowJar {
     configurations = [project.configurations.shadow]
+
 }
 
 

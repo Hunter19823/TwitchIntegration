@@ -9,6 +9,7 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pie.ilikepiefoo2.twitchintegration.events.TwitchClientInitEvent;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,12 +19,14 @@ import static pie.ilikepiefoo2.twitchintegration.TwitchIntegration.CREDENTIALS;
 public class TwitchConfigHandler {
     private static final Logger LOGGER = LogManager.getLogger(TwitchConfigHandler.class);
     public static class Common {
+
         public final ForgeConfigSpec.ConfigValue<String> oAuthToken;
         public final ForgeConfigSpec.ConfigValue<String> chatAccountOAuthToken;
         public final ForgeConfigSpec.ConfigValue<String> clientId;
         public final ForgeConfigSpec.ConfigValue<String> clientSecret;
         public final ForgeConfigSpec.ConfigValue<List<? extends String>> botOwnerIds;
         public final ForgeConfigSpec.ConfigValue<String> chatServer;
+
         public final ForgeConfigSpec.BooleanValue twitchChat;
         public final ForgeConfigSpec.BooleanValue twitchHelix;
         public final ForgeConfigSpec.BooleanValue twitchKraken;
@@ -31,6 +34,8 @@ public class TwitchConfigHandler {
         public final ForgeConfigSpec.BooleanValue graphQL;
         public final ForgeConfigSpec.BooleanValue extensions;
         public final ForgeConfigSpec.BooleanValue tmi;
+
+        public final ForgeConfigSpec.BooleanValue forgeEvents;
 
         public Common(ForgeConfigSpec.Builder builder)
         {
@@ -80,6 +85,10 @@ public class TwitchConfigHandler {
                     .comment("Enable/Disable tmi API")
                     .define("tmi",false);
             builder.pop();
+            builder.push("libraryFeatures");
+            forgeEvents = builder
+                    .comment("Enable/Disable Auto-Generated Forge Event Handlers")
+                    .define("forgeEvents",true);
         }
     }
 
@@ -179,6 +188,11 @@ public class TwitchConfigHandler {
             LOGGER.debug("Posting new Twitch Client Init Event Posted...");
         }catch(Exception e){
             LOGGER.error("Twitch Client Failed to build...",e);
+        }
+
+        if(COMMON.forgeEvents.get()){
+            LOGGER.info("Attaching Auto-generated forge events...");
+            TwitchEventHandler.attachForgeEventHandlers(CLIENT);
         }
     }
 }

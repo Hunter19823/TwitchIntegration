@@ -1,4 +1,4 @@
-package pie.ilikepiefoo2.twitchintegration;
+package pie.ilikepiefoo2.twitchintegration.events;
 
 import com.github.twitch4j.TwitchClient;
 import net.minecraftforge.eventbus.api.Event;
