@@ -25,37 +25,29 @@ public class ChannelFollowCountUpdateEventFE extends net.minecraftforge.eventbus
     {
         return this.event.getChannel(  );
     }
-    public java.lang.Integer getPreviousFollowCount( ) // Declaring Class: com.github.twitch4j.events.ChannelFollowCountUpdateEvent
-    {
-        return this.event.getPreviousFollowCount(  );
-    }
     public java.lang.Integer getFollowCount( ) // Declaring Class: com.github.twitch4j.events.ChannelFollowCountUpdateEvent
     {
         return this.event.getFollowCount(  );
     }
-    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.Integer getPreviousFollowCount( ) // Declaring Class: com.github.twitch4j.events.ChannelFollowCountUpdateEvent
     {
-        this.event.setEventId( arg0 );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.getPreviousFollowCount(  );
     }
     public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getFiredAtInstant(  );
     }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        this.event.setFiredAt( arg0 );
+        this.event.setFiredAtInstant( arg0 );
+    }
+    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setEventId( arg0 );
     }
     public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getEventId(  );
-    }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAt(  );
     }
     public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
@@ -64,6 +56,14 @@ public class ChannelFollowCountUpdateEventFE extends net.minecraftforge.eventbus
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setFiredAt( arg0 );
     }
 
 }

@@ -25,6 +25,10 @@ public class IRCMessageEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.getMessage(  );
     }
+    public java.util.Optional getPayload( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getPayload(  );
+    }
     public com.github.twitch4j.common.events.domain.EventChannel getChannel( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
     {
         return this.event.getChannel(  );
@@ -37,6 +41,46 @@ public class IRCMessageEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.isValid(  );
     }
+    public java.util.Optional getNonce( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getNonce(  );
+    }
+    public java.lang.String getUserName( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getUserName(  );
+    }
+    public java.lang.String getUserId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getUserId(  );
+    }
+    public java.lang.String getRawMessage( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getRawMessage(  );
+    }
+    public com.github.twitch4j.common.events.domain.EventUser getTargetUser( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getTargetUser(  );
+    }
+    public java.util.OptionalInt getCheererTier( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getCheererTier(  );
+    }
+    public java.util.Map getBadges( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getBadges(  );
+    }
+    public com.github.twitch4j.common.events.domain.EventUser getUser( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getUser(  );
+    }
+    public java.util.Map getBadgeInfo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getBadgeInfo(  );
+    }
+    public java.util.OptionalInt getSubscriptionTier( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getSubscriptionTier(  );
+    }
     public java.util.Set getClientPermissions( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
     {
         return this.event.getClientPermissions(  );
@@ -45,117 +89,69 @@ public class IRCMessageEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.getSubscriberMonths(  );
     }
-    public java.util.OptionalInt getSubscriptionTier( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    public java.util.Map getTags( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
     {
-        return this.event.getSubscriptionTier(  );
-    }
-    public com.github.twitch4j.common.events.domain.EventUser getUser( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getUser(  );
-    }
-    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getChannelId(  );
-    }
-    public java.lang.String getRawMessage( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getRawMessage(  );
-    }
-    public java.util.Map parseTags( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.parseTags( arg0 );
-    }
-    public java.util.Optional getNonce( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getNonce(  );
-    }
-    public java.util.Optional getPayload( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getPayload(  );
-    }
-    public java.util.Optional getTagValue( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getTagValue( arg0 );
-    }
-    public java.util.Map getBadges( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getBadges(  );
+        return this.event.getTags(  );
     }
     public java.util.Optional getMessageId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
     {
         return this.event.getMessageId(  );
     }
-    public java.lang.String getUserId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    public java.util.Optional getTagValue( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
     {
-        return this.event.getUserId(  );
-    }
-    public java.lang.String getUserName( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getUserName(  );
-    }
-    public java.util.Optional parseClientName( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.parseClientName( arg0 );
-    }
-    public java.lang.String getTargetUserId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getTargetUserId(  );
-    }
-    public com.github.twitch4j.common.events.domain.EventUser getTargetUser( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getTargetUser(  );
-    }
-    public java.util.Map getBadgeInfo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getBadgeInfo(  );
-    }
-    public java.lang.String getCommandType( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getCommandType(  );
-    }
-    public java.util.Optional getChannelName( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getChannelName(  );
-    }
-    public java.util.Map getRawTags( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getRawTags(  );
-    }
-    public java.util.Map getTags( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
-    {
-        return this.event.getTags(  );
+        return this.event.getTagValue( arg0 );
     }
     public java.util.Optional getClientName( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
     {
         return this.event.getClientName(  );
     }
+    public java.lang.String getTargetUserId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getTargetUserId(  );
+    }
+    public java.util.Optional getChannelName( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getChannelName(  );
+    }
+    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getChannelId(  );
+    }
+    public java.util.Map getRawTags( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getRawTags(  );
+    }
+    public java.util.Map parseTags( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.parseTags( arg0 );
+    }
+    public java.util.Optional parseClientName( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.parseClientName( arg0 );
+    }
+    public java.lang.String getCommandType( ) // Declaring Class: com.github.twitch4j.chat.events.channel.IRCMessageEvent
+    {
+        return this.event.getCommandType(  );
+    }
     public com.github.twitch4j.chat.TwitchChat getTwitchChat( ) // Declaring Class: com.github.twitch4j.chat.events.TwitchEvent
     {
         return this.event.getTwitchChat(  );
-    }
-    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setEventId( arg0 );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
     }
     public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getFiredAtInstant(  );
     }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        this.event.setFiredAt( arg0 );
+        this.event.setFiredAtInstant( arg0 );
+    }
+    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setEventId( arg0 );
     }
     public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getEventId(  );
-    }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAt(  );
     }
     public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
@@ -164,6 +160,14 @@ public class IRCMessageEventFE extends net.minecraftforge.eventbus.api.Event {
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setFiredAt( arg0 );
     }
 
 }

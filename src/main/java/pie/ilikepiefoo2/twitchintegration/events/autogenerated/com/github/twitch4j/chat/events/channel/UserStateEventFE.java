@@ -25,41 +25,41 @@ public class UserStateEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.getDisplayName(  );
     }
-    public com.github.twitch4j.chat.events.channel.IRCMessageEvent getMessageEvent( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
+    public boolean isPrimeOrTurbo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
-        return this.event.getMessageEvent(  );
-    }
-    public boolean isStaff( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
-    {
-        return this.event.isStaff(  );
+        return this.event.isPrimeOrTurbo(  );
     }
     public java.util.List getEmoteSets( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
         return this.event.getEmoteSets(  );
     }
-    public java.util.OptionalInt getSubscriberMonth( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
+    public boolean isStaff( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
-        return this.event.getSubscriberMonth(  );
+        return this.event.isStaff(  );
     }
-    public boolean isPrimeOrTurbo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
+    public java.util.Optional getColor( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
-        return this.event.isPrimeOrTurbo(  );
-    }
-    public boolean isModerator( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
-    {
-        return this.event.isModerator(  );
+        return this.event.getColor(  );
     }
     public boolean isSubscriber( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
         return this.event.isSubscriber(  );
     }
+    public java.util.OptionalInt getSubscriberMonth( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
+    {
+        return this.event.getSubscriberMonth(  );
+    }
+    public boolean isModerator( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
+    {
+        return this.event.isModerator(  );
+    }
     public boolean isBroadcaster( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
         return this.event.isBroadcaster(  );
     }
-    public java.util.Optional getColor( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
+    public com.github.twitch4j.chat.events.channel.IRCMessageEvent getMessageEvent( ) // Declaring Class: com.github.twitch4j.chat.events.channel.UserStateEvent
     {
-        return this.event.getColor(  );
+        return this.event.getMessageEvent(  );
     }
     public void timeout( java.lang.String arg0, java.time.Duration arg1, java.lang.String arg2 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
     {
@@ -81,29 +81,21 @@ public class UserStateEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.getTwitchChat(  );
     }
-    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        this.event.setEventId( arg0 );
+        return this.event.getFiredAtInstant(  );
     }
     public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setFiredAtInstant( arg0 );
     }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAt( arg0 );
+        this.event.setEventId( arg0 );
     }
     public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getEventId(  );
-    }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAt(  );
     }
     public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
@@ -112,6 +104,14 @@ public class UserStateEventFE extends net.minecraftforge.eventbus.api.Event {
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setFiredAt( arg0 );
     }
 
 }

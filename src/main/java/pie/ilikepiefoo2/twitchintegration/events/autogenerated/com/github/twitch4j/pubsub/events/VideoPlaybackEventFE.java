@@ -29,37 +29,29 @@ public class VideoPlaybackEventFE extends net.minecraftforge.eventbus.api.Event 
     {
         return this.event.getData(  );
     }
-    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.VideoPlaybackEvent
-    {
-        return this.event.getChannelId(  );
-    }
     public java.lang.String getChannelName( ) // Declaring Class: com.github.twitch4j.pubsub.events.VideoPlaybackEvent
     {
         return this.event.getChannelName(  );
     }
-    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.VideoPlaybackEvent
     {
-        this.event.setEventId( arg0 );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.getChannelId(  );
     }
     public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getFiredAtInstant(  );
     }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        this.event.setFiredAt( arg0 );
+        this.event.setFiredAtInstant( arg0 );
+    }
+    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setEventId( arg0 );
     }
     public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getEventId(  );
-    }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAt(  );
     }
     public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
@@ -68,6 +60,14 @@ public class VideoPlaybackEventFE extends net.minecraftforge.eventbus.api.Event 
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setFiredAt( arg0 );
     }
 
 }

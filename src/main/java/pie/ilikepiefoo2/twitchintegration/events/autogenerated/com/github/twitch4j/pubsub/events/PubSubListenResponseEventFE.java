@@ -21,17 +21,9 @@ public class PubSubListenResponseEventFE extends net.minecraftforge.eventbus.api
     {
         return this.event.hashCode(  );
     }
-    public boolean isBadAuthentication( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
-    {
-        return this.event.isBadAuthentication(  );
-    }
     public java.lang.String getNonce( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
     {
         return this.event.getNonce(  );
-    }
-    public boolean isServerError( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
-    {
-        return this.event.isServerError(  );
     }
     public boolean hasError( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
     {
@@ -41,37 +33,37 @@ public class PubSubListenResponseEventFE extends net.minecraftforge.eventbus.api
     {
         return this.event.isBadMessage(  );
     }
-    public java.lang.String getError( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
-    {
-        return this.event.getError(  );
-    }
     public boolean isBadTopic( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
     {
         return this.event.isBadTopic(  );
     }
-    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public boolean isServerError( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
     {
-        this.event.setEventId( arg0 );
+        return this.event.isServerError(  );
     }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public boolean isBadAuthentication( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
     {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.isBadAuthentication(  );
+    }
+    public java.lang.String getError( ) // Declaring Class: com.github.twitch4j.pubsub.events.PubSubListenResponseEvent
+    {
+        return this.event.getError(  );
     }
     public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getFiredAtInstant(  );
     }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        this.event.setFiredAt( arg0 );
+        this.event.setFiredAtInstant( arg0 );
+    }
+    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setEventId( arg0 );
     }
     public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getEventId(  );
-    }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAt(  );
     }
     public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
@@ -80,6 +72,14 @@ public class PubSubListenResponseEventFE extends net.minecraftforge.eventbus.api
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setFiredAt( arg0 );
     }
 
 }

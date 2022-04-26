@@ -1,7 +1,6 @@
 package pie.ilikepiefoo2.twitchintegration.util;
 
 import com.github.philippheuer.events4j.core.domain.Event;
-import javassist.Modifier;
 import org.reflections.Reflections;
 
 import java.io.BufferedWriter;
@@ -9,6 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.util.Set;
 
@@ -23,9 +23,9 @@ public class ForgeEventClassGenerator {
             //System.out.println(subject.getDeclaredFields().length);
             //System.out.println(subject.getDeclaredMethods().length);
             //System.out.println(toJavaFile(subject));
-            //generateFEFile(subject);
+            generateFEFile(subject);
 
-            printEventHandlerHook(subject);
+            //printEventHandlerHook(subject);
 
         });
     }
@@ -76,6 +76,8 @@ public class ForgeEventClassGenerator {
         builder.append(";\n\n\n");
 
         // Class
+        if(subject.getAnnotation(Deprecated.class) != null)
+            builder.append("@Deprecated\n");
         builder.append("public class ");
         builder.append(newClassName);
         builder.append(" extends net.minecraftforge.eventbus.api.Event {\n");
@@ -104,6 +106,8 @@ public class ForgeEventClassGenerator {
     {
         if(Modifier.isPublic(method.getModifiers()) && !method.getDeclaringClass().equals(Object.class) && !Modifier.isVolatile(method.getModifiers())) {
             StringBuilder paramBuilder = new StringBuilder("");
+            if(method.getAnnotation(Deprecated.class) != null)
+                builder.append("    @Deprecated\n");
             builder.append("    ");
             builder.append(Modifier.toString(method.getModifiers()));
             builder.append(" ");

@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[33,)"
+loaderVersion="[40,)"
 issueTrackerURL = "https://github.com/Hunter19823/TwitchIntegration/issues"
 license = "All Rights Reserved"
 
@@ -17,6 +17,6 @@ license = "All Rights Reserved"
 [[dependencies.twitchintegration]]
     modId="forge"
     mandatory = true
-    versionRange = "[33,)"
+    versionRange = "[40,)"
     ordering = "NONE"
     side="BOTH"
