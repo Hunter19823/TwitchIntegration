@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Set;
 
 public class ForgeEventClassGenerator {
@@ -23,9 +25,9 @@ public class ForgeEventClassGenerator {
             //System.out.println(subject.getDeclaredFields().length);
             //System.out.println(subject.getDeclaredMethods().length);
             //System.out.println(toJavaFile(subject));
-            generateFEFile(subject);
+            //generateFEFile(subject);
 
-            //printEventHandlerHook(subject);
+            printEventHandlerHook(subject);
 
         });
     }
@@ -85,6 +87,7 @@ public class ForgeEventClassGenerator {
         builder.append("    public final ");
         builder.append(subject.getName());
         builder.append(" event;\n\n");
+
         // Constructor
         builder.append("    public ");
         builder.append(newClassName);
@@ -93,7 +96,7 @@ public class ForgeEventClassGenerator {
         builder.append(" event )\n    {\n        this.event = event;\n    }\n\n");
 
         // Methods
-        for(Method method : subject.getMethods()){
+        for(Method method : Arrays.stream(subject.getMethods()).sorted(Comparator.comparing(Method::getName)).toList()){
             appendMethod(builder, method);
         }
 

@@ -13,13 +13,25 @@ public class UserCommunityGoalContributionEventFE extends net.minecraftforge.eve
     {
         return this.event.equals( arg0 );
     }
-    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
+    public com.github.twitch4j.pubsub.domain.CommunityGoalContribution getContribution( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
     {
-        return this.event.toString(  );
+        return this.event.getContribution(  );
     }
-    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
+    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.hashCode(  );
+        return this.event.getEventId(  );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAtInstant(  );
+    }
+    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getServiceMediator(  );
     }
     public java.time.Instant getTimestamp( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
     {
@@ -29,41 +41,29 @@ public class UserCommunityGoalContributionEventFE extends net.minecraftforge.eve
     {
         return this.event.getUserId(  );
     }
-    public com.github.twitch4j.pubsub.domain.CommunityGoalContribution getContribution( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
+    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
     {
-        return this.event.getContribution(  );
-    }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.hashCode(  );
     }
     public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setEventId( arg0 );
     }
-    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getEventId(  );
+        this.event.setFiredAt( arg0 );
     }
-    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getServiceMediator(  );
+        this.event.setFiredAtInstant( arg0 );
     }
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
     }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.UserCommunityGoalContributionEvent
     {
-        return this.event.getFiredAt(  );
-    }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAt( arg0 );
+        return this.event.toString(  );
     }
 
 }

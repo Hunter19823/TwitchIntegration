@@ -13,13 +13,17 @@ public class PrivateMessageEventFE extends net.minecraftforge.eventbus.api.Event
     {
         return this.event.equals( arg0 );
     }
-    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.common.events.user.PrivateMessageEvent
+    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.toString(  );
+        return this.event.getEventId(  );
     }
-    public int hashCode( ) // Declaring Class: com.github.twitch4j.common.events.user.PrivateMessageEvent
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.hashCode(  );
+        return this.event.getFiredAt(  );
+    }
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAtInstant(  );
     }
     public java.lang.String getMessage( ) // Declaring Class: com.github.twitch4j.common.events.user.PrivateMessageEvent
     {
@@ -29,41 +33,37 @@ public class PrivateMessageEventFE extends net.minecraftforge.eventbus.api.Event
     {
         return this.event.getPermissions(  );
     }
+    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getServiceMediator(  );
+    }
     public com.github.twitch4j.common.events.domain.EventUser getUser( ) // Declaring Class: com.github.twitch4j.common.events.user.PrivateMessageEvent
     {
         return this.event.getUser(  );
     }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public int hashCode( ) // Declaring Class: com.github.twitch4j.common.events.user.PrivateMessageEvent
     {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.hashCode(  );
     }
     public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setEventId( arg0 );
     }
-    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getEventId(  );
+        this.event.setFiredAt( arg0 );
     }
-    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getServiceMediator(  );
+        this.event.setFiredAtInstant( arg0 );
     }
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
     }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.common.events.user.PrivateMessageEvent
     {
-        return this.event.getFiredAt(  );
-    }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAt( arg0 );
+        return this.event.toString(  );
     }
 
 }

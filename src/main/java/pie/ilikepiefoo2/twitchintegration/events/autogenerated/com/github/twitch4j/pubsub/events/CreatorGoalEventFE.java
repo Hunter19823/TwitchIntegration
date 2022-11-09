@@ -13,29 +13,37 @@ public class CreatorGoalEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.equals( arg0 );
     }
-    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
     {
-        return this.event.toString(  );
+        return this.event.getChannelId(  );
     }
-    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.hashCode(  );
+        return this.event.getEventId(  );
     }
-    public java.lang.String getType( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getType(  );
+        return this.event.getFiredAt(  );
     }
-    public boolean isGoalUpdate( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.isGoalUpdate(  );
+        return this.event.getFiredAtInstant(  );
     }
     public com.github.twitch4j.pubsub.domain.CreatorGoal getGoal( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
     {
         return this.event.getGoal(  );
     }
-    public boolean isGoalFinish( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.isGoalFinish(  );
+        return this.event.getServiceMediator(  );
+    }
+    public java.lang.String getType( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    {
+        return this.event.getType(  );
+    }
+    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    {
+        return this.event.hashCode(  );
     }
     public boolean isGoalAchieve( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
     {
@@ -45,41 +53,33 @@ public class CreatorGoalEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.isGoalCreate(  );
     }
-    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
+    public boolean isGoalFinish( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
     {
-        return this.event.getChannelId(  );
+        return this.event.isGoalFinish(  );
     }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public boolean isGoalUpdate( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
     {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.isGoalUpdate(  );
     }
     public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setEventId( arg0 );
     }
-    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getEventId(  );
+        this.event.setFiredAt( arg0 );
     }
-    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getServiceMediator(  );
+        this.event.setFiredAtInstant( arg0 );
     }
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
     }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.CreatorGoalEvent
     {
-        return this.event.getFiredAt(  );
-    }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAt( arg0 );
+        return this.event.toString(  );
     }
 
 }

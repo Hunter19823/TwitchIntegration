@@ -13,13 +13,25 @@ public class ChannelUnbanRequestUpdateEventFE extends net.minecraftforge.eventbu
     {
         return this.event.equals( arg0 );
     }
-    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.ChannelUnbanRequestUpdateEvent
+    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.UnbanRequestEvent
     {
-        return this.event.toString(  );
+        return this.event.getChannelId(  );
     }
-    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.ChannelUnbanRequestUpdateEvent
+    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.hashCode(  );
+        return this.event.getEventId(  );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAtInstant(  );
+    }
+    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getServiceMediator(  );
     }
     public com.github.twitch4j.pubsub.domain.UpdatedUnbanRequest getUnbanRequest( ) // Declaring Class: com.github.twitch4j.pubsub.events.ChannelUnbanRequestUpdateEvent
     {
@@ -29,41 +41,29 @@ public class ChannelUnbanRequestUpdateEventFE extends net.minecraftforge.eventbu
     {
         return this.event.getUserId(  );
     }
-    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.UnbanRequestEvent
+    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.ChannelUnbanRequestUpdateEvent
     {
-        return this.event.getChannelId(  );
-    }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        return this.event.hashCode(  );
     }
     public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setEventId( arg0 );
     }
-    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getEventId(  );
+        this.event.setFiredAt( arg0 );
     }
-    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getServiceMediator(  );
+        this.event.setFiredAtInstant( arg0 );
     }
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
     }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.ChannelUnbanRequestUpdateEvent
     {
-        return this.event.getFiredAt(  );
-    }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAt( arg0 );
+        return this.event.toString(  );
     }
 
 }

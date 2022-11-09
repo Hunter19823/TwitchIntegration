@@ -9,62 +9,90 @@ public class ChannelMessageEventFE extends net.minecraftforge.eventbus.api.Event
         this.event = event;
     }
 
+    public void ban( java.lang.String arg0, java.lang.String arg1 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
+    {
+        this.event.ban( arg0,arg1 );
+    }
     public boolean equals( java.lang.Object arg0 ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
     {
         return this.event.equals( arg0 );
     }
-    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    public com.github.twitch4j.common.events.domain.EventChannel getChannel( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
     {
-        return this.event.toString(  );
-    }
-    public int hashCode( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.hashCode(  );
-    }
-    public java.lang.String getMessage( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.getMessage(  );
-    }
-    public java.util.Set getPermissions( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.getPermissions(  );
-    }
-    public java.util.List getFlags( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.getFlags(  );
-    }
-    public java.lang.String getNonce( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.getNonce(  );
-    }
-    public com.github.twitch4j.common.events.domain.EventUser getUser( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.getUser(  );
-    }
-    public com.github.twitch4j.common.util.ChatReply getReplyInfo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.getReplyInfo(  );
+        return this.event.getChannel(  );
     }
     @Deprecated
     public com.github.twitch4j.chat.util.ChatCrowdChant getChantInfo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
     {
         return this.event.getChantInfo(  );
     }
-    public boolean isUserIntroduction( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
-    {
-        return this.event.isUserIntroduction(  );
-    }
     public java.util.Optional getCustomRewardId( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
     {
         return this.event.getCustomRewardId(  );
     }
-    public int getSubscriptionTier( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getEventId(  );
+    }
+    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAt(  );
+    }
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAtInstant(  );
+    }
+    public java.util.List getFlags( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getFlags(  );
+    }
+    public java.lang.String getMessage( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getMessage(  );
+    }
+    public com.github.twitch4j.chat.events.channel.IRCMessageEvent getMessageEvent( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getMessageEvent(  );
+    }
+    public java.lang.String getNonce( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getNonce(  );
+    }
+    public java.util.Set getPermissions( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getPermissions(  );
+    }
+    public com.github.twitch4j.common.util.ChatReply getReplyInfo( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    {
+        return this.event.getReplyInfo(  );
+    }
+    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getServiceMediator(  );
+    }
+    public int getSubscriberMonths( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getSubscriberMonths(  );
+    }
+    public int getSubscriptionTier( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
     {
         return this.event.getSubscriptionTier(  );
     }
-    public int getSubscriberMonths( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    public com.github.twitch4j.chat.TwitchChat getTwitchChat( ) // Declaring Class: com.github.twitch4j.chat.events.TwitchEvent
     {
-        return this.event.getSubscriberMonths(  );
+        return this.event.getTwitchChat(  );
+    }
+    public com.github.twitch4j.common.events.domain.EventUser getUser( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelMessageEvent
+    {
+        return this.event.getUser(  );
+    }
+    public int hashCode( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    {
+        return this.event.hashCode(  );
+    }
+    public boolean isDesignatedFirstMessage( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    {
+        return this.event.isDesignatedFirstMessage(  );
     }
     public boolean isHighlightedMessage( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
     {
@@ -74,69 +102,41 @@ public class ChannelMessageEventFE extends net.minecraftforge.eventbus.api.Event
     {
         return this.event.isSkipSubsModeMessage(  );
     }
-    public boolean isDesignatedFirstMessage( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    public boolean isUserIntroduction( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
     {
-        return this.event.isDesignatedFirstMessage(  );
+        return this.event.isUserIntroduction(  );
     }
-    public com.github.twitch4j.chat.events.channel.IRCMessageEvent getMessageEvent( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
+    public void reply( com.github.twitch4j.chat.ITwitchChat arg0, java.lang.String arg1 ) // Declaring Class: com.github.twitch4j.chat.events.channel.ReplyableEvent
     {
-        return this.event.getMessageEvent(  );
-    }
-    public void timeout( java.lang.String arg0, java.time.Duration arg1, java.lang.String arg2 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
-    {
-        this.event.timeout( arg0,arg1,arg2 );
-    }
-    public com.github.twitch4j.common.events.domain.EventChannel getChannel( ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
-    {
-        return this.event.getChannel(  );
-    }
-    public void unban( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
-    {
-        this.event.unban( arg0 );
-    }
-    public void ban( java.lang.String arg0, java.lang.String arg1 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
-    {
-        this.event.ban( arg0,arg1 );
-    }
-    public com.github.twitch4j.chat.TwitchChat getTwitchChat( ) // Declaring Class: com.github.twitch4j.chat.events.TwitchEvent
-    {
-        return this.event.getTwitchChat(  );
-    }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
+        this.event.reply( arg0,arg1 );
     }
     public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setEventId( arg0 );
     }
-    public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getEventId(  );
+        this.event.setFiredAt( arg0 );
     }
-    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
-        return this.event.getServiceMediator(  );
+        this.event.setFiredAtInstant( arg0 );
     }
     public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setServiceMediator( arg0 );
     }
-    public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public void timeout( java.lang.String arg0, java.time.Duration arg1, java.lang.String arg2 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
     {
-        return this.event.getFiredAt(  );
+        this.event.timeout( arg0,arg1,arg2 );
     }
-    public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.chat.events.channel.ChannelMessageEvent
     {
-        this.event.setFiredAt( arg0 );
+        return this.event.toString(  );
     }
-    public void reply( com.github.twitch4j.chat.ITwitchChat arg0, java.lang.String arg1 ) // Declaring Class: com.github.twitch4j.chat.events.channel.ReplyableEvent
+    public void unban( java.lang.String arg0 ) // Declaring Class: com.github.twitch4j.chat.events.AbstractChannelEvent
     {
-        this.event.reply( arg0,arg1 );
+        this.event.unban( arg0 );
     }
 
 }

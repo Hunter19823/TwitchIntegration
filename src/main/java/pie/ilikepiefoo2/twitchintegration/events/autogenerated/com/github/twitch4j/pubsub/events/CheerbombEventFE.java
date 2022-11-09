@@ -13,53 +13,53 @@ public class CheerbombEventFE extends net.minecraftforge.eventbus.api.Event {
     {
         return this.event.equals( arg0 );
     }
-    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
+    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
     {
-        return this.event.toString(  );
-    }
-    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
-    {
-        return this.event.hashCode(  );
+        return this.event.getChannelId(  );
     }
     public com.github.twitch4j.pubsub.domain.CheerbombData getCheerbomb( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
     {
         return this.event.getCheerbomb(  );
     }
-    public java.lang.String getChannelId( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
-    {
-        return this.event.getChannelId(  );
-    }
-    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getFiredAtInstant(  );
-    }
-    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setFiredAtInstant( arg0 );
-    }
-    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setEventId( arg0 );
-    }
     public java.lang.String getEventId( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getEventId(  );
-    }
-    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        return this.event.getServiceMediator(  );
-    }
-    public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
-    {
-        this.event.setServiceMediator( arg0 );
     }
     public java.util.Calendar getFiredAt( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         return this.event.getFiredAt(  );
     }
+    public java.time.Instant getFiredAtInstant( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getFiredAtInstant(  );
+    }
+    public com.github.philippheuer.events4j.api.service.IServiceMediator getServiceMediator( ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        return this.event.getServiceMediator(  );
+    }
+    public int hashCode( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
+    {
+        return this.event.hashCode(  );
+    }
+    public void setEventId( java.lang.String arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setEventId( arg0 );
+    }
     public void setFiredAt( java.util.Calendar arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
     {
         this.event.setFiredAt( arg0 );
+    }
+    public void setFiredAtInstant( java.time.Instant arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setFiredAtInstant( arg0 );
+    }
+    public void setServiceMediator( com.github.philippheuer.events4j.api.service.IServiceMediator arg0 ) // Declaring Class: com.github.philippheuer.events4j.core.domain.Event
+    {
+        this.event.setServiceMediator( arg0 );
+    }
+    public java.lang.String toString( ) // Declaring Class: com.github.twitch4j.pubsub.events.CheerbombEvent
+    {
+        return this.event.toString(  );
     }
 
 }

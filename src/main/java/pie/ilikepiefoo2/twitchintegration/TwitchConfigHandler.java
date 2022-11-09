@@ -1,7 +1,6 @@
 package pie.ilikepiefoo2.twitchintegration;
 
 import com.github.philippheuer.credentialmanager.domain.OAuth2Credential;
-import com.github.philippheuer.credentialmanager.identityprovider.TwitchIdentityProvider;
 import com.github.twitch4j.TwitchClient;
 import com.github.twitch4j.TwitchClientBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -85,7 +84,7 @@ public class TwitchConfigHandler {
                     .comment("Enable/Disable graphQL API")
                     .define("graphQL",false);
             extensions  = builder
-                    .comment("Enable/Disable extensions API")
+                    .comment("Enable/Disable extensions API. (Deprecated)")
                     .define("extensions",false);
             tmi  = builder
                     .comment("Enable/Disable tmi API")
